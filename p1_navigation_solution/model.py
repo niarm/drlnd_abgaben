@@ -3,16 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 ## SCORES:
-# units: [64,32,16],    useDropout:False            || 600 Episodes     ||--->  14.20
-# units: [128,64,32],   useDropout:False            || 600 Episodes     ||--->  14.23 
-# units: [256,128,64],  useDropout:False            || 600 Episodes     ||--->  13.90
-# units: [128,64,32],   useDropout:True / p=0.5     || 900 Episodes     ||--->  8.00
-# units: [256,128,64],  useDropout:True / p=0.5     || 700 Episodes     ||--->  9.16  
-# units: [128,64,32],   useDropout:True / p=0.15    || 600 Episodes     ||--->  14.40
-# units: [128,128,64],  useDropout:True / p=0.15    || 619 Episodes     ||--->  15.01 (best) 
-# units: [256,128,64],  useDropout:True / p=0.15    || 1300 Episodes    ||--->  15.28   
-# units: [256,128,64,32],  useDropout:True / p=0.15    || 1300 Episodes    ||--->  15.28   
-# units: [256,128,128,32],  useDropout:True / p=0.15    || 1300 Episodes    ||--->  15.28   
+ # units: [256,128,128,32],  useDropout:True / p=0.15     
 
 class QNetwork(nn.Module):
 
