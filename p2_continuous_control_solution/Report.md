@@ -12,6 +12,10 @@ The used Algorithm is a Deep-Deterministic-Policy-Gradient (DDPG)
 DDPG is an actor-critic, model-free algorithm that can easily adapt to continuous action spaces.
 DDPG uses two neural networks, one as the actor and the other one as the critic. The Actor gets the current state as input and outputs a continuous value for the action. Hereby, the actor uses a stochastic behaviour. The critic on the other hand estimates a Q-Value based on the current state and the chosen action and uses a temporal-difference method to do so. 
 
+<b>The DDPG-Algorithm:</b>
+
+![alt text](./ddpg_algorithm.png)
+
 For a more complete instruction of the algorithm, see: https://arxiv.org/pdf/1509.02971.pdf
 
 Multiple Agents where used (The MultiAgent-Environment has 20 Agents)
