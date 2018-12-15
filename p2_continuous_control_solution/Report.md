@@ -26,36 +26,34 @@ Every 20 Time-Steps, the Agents take 10 learning steps.
 #### 3. Hyperparameters
 The Agents was trained with the following Hyperparameters:
 
-Number of Episodes: 300
-Maximum Steps per Episode: 600
-
 BUFFER_SIZE (Replay-Buffer): 1000000
-BATCH_SIZE (Batch lenght of Replay-Buffer Experience): 64
+BATCH_SIZE (Batch lenght of Replay-Buffer Experience): 128
 GAMMA (Discount Factor): 0.99
 TAU (Soft-Update Parameter): 0.001
-LR_ACTOR (Actor Learning Rate): 0.0001
+LR_ACTOR (Actor Learning Rate): 0.0003
 LR_CRITIC (Critic Learning Rate: 0.0003
-WEIGHT_DECAY (L2 Loss Weight Decay): 0.0001
+WEIGHT_DECAY (L2 Loss Weight Decay): 0
 
 
 #### 4. Neural Network
 The Neural Network for DDPG-Actor was:
 
 Linear (Fully-Connected Layers) with units:
-input_state[33] -> linear[256] -> out[4]
+input_state[33] -> linear[400] -> linear[300] ->out[4]
 
 The Neural Network for the DDPG-Critic was:
 Linear (Fully-Connected Layers) with units:
-input_state[33] -> linear_concat_with_actions[256 + 4] -> linear[256] -> linear[128] -> out[1]
+input_state[33] -> linear_concat_with_actions[400 + 4] -> linear[300] -> out[1]
 
 
 
 #### 5. Results
-After 300 Episodes, the Agents scored 73.13 points on Average over a time-window of 100 Episodes
+After 120 Episodes, the Agents scored 30.00 points on Average over a time-window of 100 Episodes
 
-Episode 100     Average Score: 14.26
-Episode 200	    Average Score: 43.33
-Episode 300	    Average Score: 73.13
+<b>PLEASE SEE result_log.txt for detailed Result Values</b>
+
+![alt text](./scores_figure.png)
+
 
 #### 6. Future Improvements
 - The Models of the Actor and the Critic can be optimized further
