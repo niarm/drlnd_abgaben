@@ -29,6 +29,4 @@ Follow the instructions inside the Jupyter-Notebook "Solution.ipynb"
 #### Credit
 This Solution is based upon the implementation of a DDPG(Deep Deterministic Policy Gradient)
 by the udacity Team: https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum
-and basically a copy of their code, adjusted to work with the Banana-Environment and some changes in the Neural-Network-Structure
-
 
