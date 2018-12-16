@@ -21,17 +21,16 @@ For a more complete instruction of the algorithm, see: https://arxiv.org/pdf/150
 Multiple Agents where used (The MultiAgent-Environment has 2 collaborating Agents)
 The Agents pushed their observations into a shared Replay Buffer, what dramatically increases the exploration ability of the Algorithm.
 
-Every 20 Time-Steps, the Agents take 10 learning steps. 
 
 #### 3. Hyperparameters
 The Agents was trained with the following Hyperparameters:
 
-- BUFFER_SIZE (Replay-Buffer): 1000000
-- BATCH_SIZE (Batch lenght of Replay-Buffer Experience): 256
+- BUFFER_SIZE (Replay-Buffer): 500000
+- BATCH_SIZE (Batch lenght of Replay-Buffer Experience): 128
 - GAMMA (Discount Factor): 0.99
 - TAU (Soft-Update Parameter): 0.001
 - LR_ACTOR (Actor Learning Rate): 0.0001
-- LR_CRITIC (Critic Learning Rate: 0.001
+- LR_CRITIC (Critic Learning Rate: 0.0003
 - WEIGHT_DECAY (L2 Loss Weight Decay): 0
 
 
@@ -39,11 +38,11 @@ The Agents was trained with the following Hyperparameters:
 The Neural Network for DDPG-Actor was:
 
 Linear (Fully-Connected Layers) with units:
-input_state[24] -> linear[400] -> linear[300] ->out[4]
+input_state[24] -> linear[512] -> linear[300] ->out[4]
 
 The Neural Network for the DDPG-Critic was:
 Linear (Fully-Connected Layers) with units:
-input_state[24] -> linear_concat_with_actions[400 + 4] -> linear[300] -> out[1]
+input_state[24] -> linear_concat_with_actions[512 + 2] -> linear[300] -> out[1]
 
 
 
